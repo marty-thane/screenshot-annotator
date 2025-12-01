@@ -1,5 +1,7 @@
 # Screenshot Annotator
 
+![Demo](demo.png)
+
 A simple graphical tool built with Python and Tkinter to quickly annotate screenshots. You can draw rectangles and automatically add numbered labels to highlight areas of an image.
 
 ## Features
