@@ -35,7 +35,7 @@ class DoodleApp:
         self.temp = None
 
         self.auto_number = 1
-        self.initial_auto_number = args.initial_number
+        self.initial_auto_number = args.start_at
 
         self.line_width = 4
         self.font_size = 24
@@ -225,14 +225,14 @@ class DoodleApp:
 def main():
     parser = argparse.ArgumentParser(description="Simple screenshot annotation tool.")
     parser.add_argument("file", nargs="?", help="Image file to open")
-    parser.add_argument("--inplace", action="store_true",
+    parser.add_argument("-i", "--inplace", action="store_true",
                         help="Save changes back to the original file without prompting")
-    parser.add_argument("--numbers", action="store_true",
+    parser.add_argument("-n", "--numbers", action="store_true",
                         help="Auto-label rectangles with auto-incrementing numbers")
-    parser.add_argument("--scale", type=float, default=None,
-                        help="Manual scaling factor for rectangle & font sizes (overrides automatic scaling)")
-    parser.add_argument("--initial-number", type=int, default=1,
+    parser.add_argument("-s", "--start-at", type=int, default=1, dest="start_at",
                         help="Set the initial number for auto-incrementing labels (requires --numbers)")
+    parser.add_argument("-z", "--scale", type=float, default=None,
+                        help="Manual scaling factor for rectangle & font sizes (overrides automatic scaling)")
     args = parser.parse_args()
 
     root = tk.Tk()
