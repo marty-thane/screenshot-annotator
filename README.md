@@ -9,6 +9,7 @@ A simple graphical tool built with Python and Tkinter to quickly annotate screen
 -   Optionally, automatically add numbered labels next to each rectangle.
 -   Save the annotated image to a new file or save over the original file.
 -   Annotation thickness and font size scale automatically based on the image size, but can also be controlled manually.
+-   Undo and redo actions.
 
 ## Dependencies
 
@@ -46,7 +47,8 @@ python3 main.py /path/to/your/image.png
 1.  If you didn't provide a file at the command line, click the **Open** button to load an image.
 2.  Click and drag the mouse on the image to draw a rectangle.
 3.  The rectangle and an optional number will be drawn when you release the mouse button.
-4.  Click the **Save** button to save the annotated image.
+4.  Use the **Undo** and **Redo** buttons in the toolbar, or the keyboard shortcuts (Ctrl+Z for undo, Ctrl+Y or Ctrl+Shift+Z for redo) to reverse or reapply changes.
+5.  Click the **Save** button to save the annotated image.
 
 ### Command-Line Arguments
 
