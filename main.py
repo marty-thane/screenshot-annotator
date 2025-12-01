@@ -35,6 +35,7 @@ class DoodleApp:
         self.temp = None
 
         self.auto_number = 1
+        self.initial_auto_number = args.initial_number
 
         self.line_width = 4
         self.font_size = 24
@@ -129,7 +130,7 @@ class DoodleApp:
         self.image = image
         self.compute_scaling()
 
-        self.auto_number = 1
+        self.auto_number = self.initial_auto_number
         self.history = []
         self.history_index = -1
         self.push_history_state((self.image.copy(), self.auto_number))
@@ -230,6 +231,8 @@ def main():
                         help="Auto-label rectangles with auto-incrementing numbers")
     parser.add_argument("--scale", type=float, default=None,
                         help="Manual scaling factor for rectangle & font sizes (overrides automatic scaling)")
+    parser.add_argument("--initial-number", type=int, default=1,
+                        help="Set the initial number for auto-incrementing labels (requires --numbers)")
     args = parser.parse_args()
 
     root = tk.Tk()

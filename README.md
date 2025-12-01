@@ -57,12 +57,13 @@ python3 main.py /path/to/your/image.png
 -   `file`: (Optional) The path to the image file to open.
 -   `--inplace`: If specified, saving will overwrite the original file. Use with caution.
 -   `--numbers`: If specified, each rectangle you draw will be automatically labeled with an incrementing number.
+-   `--initial-number <INT>`: Sets the initial number for auto-incrementing labels (requires `--numbers`). Defaults to 1.
 -   `--scale <FLOAT>`: A manual scaling factor for the thickness of the rectangle lines and the font size. This overrides the automatic scaling.
 
 **Example with options:**
 
-This will open `my_screenshot.png`, allow you to add numbered labels, and will save changes directly back to `my_screenshot.png`.
+This will open `my_screenshot.png`, allow you to add numbered labels starting from 5, and will save changes directly back to `my_screenshot.png`.
 
 ```bash
-python3 main.py --numbers --inplace my_screenshot.png
+python3 main.py --numbers --initial-number 5 --inplace my_screenshot.png
 ```
